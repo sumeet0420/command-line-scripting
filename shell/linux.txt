@@ -1,0 +1,85 @@
+cat filename => print the contents of the files
+
+less, more =>
+head, tail
+cd - => back
+| tee -a => to appends and get your output on console as well...
+
+cut -c[num] or -d (delimiter)=> cut the output; head -10 words.txt | cut -c1-5
+cut -d, -f 1 demands.log
+
+awk =>list by column
+cat sienfeld-characters.txt|  awk '{print $1}'
+ls -lR|  awk '{print $1,$NF}'
+awk '/j/i {print}' sienfeld-characters.txt
+$ ls -l | awk -F: '{$1=""; print}' | awk '{print $2}'
+awk 'length($0)>14 {print NR,$0'} sienfeld-characters.txt
+grep / egrep
+grep -Ei "l{2}.+?a" sienfeld-characters.txt
+sort =>sort -rk2
+sort with delimiter => sort -k3,3 -k2,2 -t ',' sort.txt 
+uniq => first sort then uniq
+sort -k2 sienfeld-characters.txt | uniq -d
+wc -l
+diff and comp
+touch => create a file
+vi => open text editor
+ls -latr | head -1 => sort by time (-t) in reverse order ()
+ls -R => Recurrecsive
+cp => copy
+rm => remove; rm -Rf
+mv => move
+mkdir => make directory
+rmdir => remove directory
+chgrp, chmod, chown
+sed 's/Jack/jack/g' sienfeld-characters.txtsed
+sed '/^$/d' sienfeld-characters.txt
+sed '/Ja/a Hello' sienfeld-characters.txt => append something
+sed '/Ja/i Hello' sienfeld-characters.txt => insert something
+sed OPTIONS [SCRIPT] INPUT => SCRIPT => [ADDR][X][OPTION]
+sed '/Ja/q' sienfeld-characters.txt => quit
+sed '/Jack/q2' sienfeld-characters.txt => exit status 2
+sed -ne '/Jack/p' -ne '/Jack/q2' sienfeld-characters.txt => multiple scripts
+sed -n '/Mark/e echo -n "Data: ";date' sienfeld-characters.txt => e can be used to fire shell commands
+sed '1e echo -n "Data: ";date' sienfeld-characters.txt
+sed 's/regexp/replacement/[flags]' sienfeld-characters.txt
+sleep 100
+sed -e '/Mark/p' sienfeld-characters.txt =>
+brace expansion => {1..1000}
+sed -n '3,6p' words.txt
+Standard Input 0<
+Standard Output 1>
+Standard Error 2>
+ls {*.txt,*.sh}
+date +%d-%m-%Y-%H-%M-%S
+set | grep ^IFS
+[ 100 -gt 2000 ]; echo $?
+[ 100 -gt 2000 -o 200 -gt 190 ]; echo $?
+C:\Program Files\Git\usr\bin
+
+
+
+
+Shell 
+
+Special characters 
+| & ; { } < > space tab newline
+
+Control Characters
+||  & && ; ;; ;& ;;& ( )
+
+| => output to input transformation
+& => command run in the background
+; => command ender; multiple commands can be used in a single line
+{ } => crates a subshell;
+> => output
+< => input
+# => comment
+
+
+
+To escape use single quotes (' ') also called strong quoting
+To escape using week quoting ( " ") which doesn't translate $ or \\
+
+To use variable, use $
+To get the process id, use $$

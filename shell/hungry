@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "I am hungry. Feed me data." | tee -a demands.txt | date >> demands.log

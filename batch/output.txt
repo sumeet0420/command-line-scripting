@@ -1,0 +1,27 @@
+
+
+1
+2
+3
+4
+5
+
+0
+5
+10
+15
+20
+
+john of age 65 is a male	
+sam of age 43 is a male	
+jasmine of age 32 is a female	
+aladdin of age 34 is a female	
+sherlock of age 45 is a female	
+
+01_batch.bat
+02_batch.bat
+03_batch.bat
+data.csv
+output.txt
+
+
